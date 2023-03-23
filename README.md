@@ -53,3 +53,36 @@ const modifyNavItem = BEM.m("block-name__nav-item")
 modifyNavItem("mod1 mod2")
 // 'block-name__nav-item--mod1 block-name__nav-item--mod2'
 ```
+
+### Snippets
+
+#### The following are useful snippets to add to javascript.json in VSCode
+
+```json
+{
+  "import createBEM": {
+    "prefix": "icb",
+    "body": "import createBEM"
+  },
+  "createBEM": {
+    "prefix": "bc",
+    "body": "const BEM = createBEM($1)$2"
+  },
+  "BEM Block": {
+    "prefix": "bb",
+    "body": "BEM.b"
+  },
+  "ModifyBEMBlock": {
+    "prefix": "bbm",
+    "body": "BEM.bm($1)$0"
+  },
+  "BEM Element": {
+    "prefix": "be",
+    "body": "BEM.e($1)$0"
+  },
+  "BEM create Modifier": {
+    "prefix": "bm",
+    "body": "const $1 = BEM.m($2)$0"
+  }
+}
+```

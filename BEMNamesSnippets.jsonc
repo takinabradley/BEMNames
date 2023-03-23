@@ -1,0 +1,28 @@
+// VSCode BEMNames Snippets
+// Add desired snippets to your javascript.json file
+{
+  "import createBEM": {
+    "prefix": "icb",
+    "body": "import createBEM"
+  },
+  "createBEM": {
+    "prefix": "bc",
+    "body": "const BEM = createBEM($1)$2"
+  },
+  "BEM Block": {
+    "prefix": "bb",
+    "body": "BEM.b"
+  },
+  "ModifyBEMBlock": {
+    "prefix": "bbm",
+    "body": "BEM.bm($1)$0"
+  },
+  "BEM Element": {
+    "prefix": "be",
+    "body": "BEM.e($1)$0"
+  },
+  "BEM create Modifier": {
+    "prefix": "bm",
+    "body": "const $1 = BEM.m($2)$0"
+  }
+}
