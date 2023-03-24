@@ -1,4 +1,4 @@
-function createBEM(b) {
+export default function createBEM(b) {
   return {
     // block
     b,
@@ -31,6 +31,7 @@ function createBEM(b) {
   }
 }
 
+// Building blocks
 const isEmptyString = (item) => item === ""
 
 function makeBuildModifiersFromItem(item) {
@@ -65,6 +66,45 @@ function buildBEM(block, elem, modifier) {
 const buildElem = (block, elem) => block + "__" + elem
 const buildModifier = (item, modifier) => item + "--" + modifier
 
-export default createBEM
-
 export { buildElem, buildModifier, buildBEM, makeBuildModifiersFromItem }
+
+// other exports for customization (untested)
+// may be used to implement a custom configuration object later
+const makeMakeBuildModifiersFromItem =
+  (buildModifier) => (item) => (modifiers) => {
+    if (typeof modifiers !== "string") return ""
+    const modifierList = modifiers.split(" ")
+    if (modifierList.every(isEmptyString)) return ""
+    return modifierList
+      .map((modifier) => buildModifier(item, modifier))
+      .join(" ")
+  }
+
+const makeBuildBEM = (buildElem, buildModifier) => (block, elem, modifier) => {
+  if (block && elem && modifier) {
+    return buildModifier(buildElem(block, elem), modifier)
+  }
+
+  if (block && modifier) {
+    return buildModifier(block, modifier)
+  }
+
+  if (block && elem) {
+    return buildElem(block, elem)
+  }
+
+  if (elem && modifier) {
+    return buildModifier(elem, modifier)
+  }
+}
+
+const makeBuildElem = (separator) => (block, elem) => block + separator + elem
+const makeBuildModifier = (separator) => (item, modifier) =>
+  item + separator + modifier
+
+export {
+  makeBuildModifier,
+  makeBuildElem,
+  makeBuildBEM,
+  makeMakeBuildModifiersFromItem
+}
