@@ -1,0 +1,19 @@
+{
+  "name": "@takinabradley/bem-names",
+  "version": "1.0.0",
+  "description": "A utility for easily creating BEM class names in JS",
+  "main": "BEMNames.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takinabradley/BEMNames.git"
+  },
+  "author": "takinabradley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/takinabradley/BEMNames/issues"
+  },
+  "homepage": "https://github.com/takinabradley/BEMNames#readme"
+}
