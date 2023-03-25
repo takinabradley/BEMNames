@@ -3,7 +3,7 @@
 {
   "import createBEM": {
     "prefix": "icb",
-    "body": "import createBEM"
+    "body": "import createBEM from '@takinabradley/bem-names'"
   },
   "createBEM": {
     "prefix": "bc",

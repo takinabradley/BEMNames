@@ -2,12 +2,18 @@
 
 ## A utility for easily creating BEM class names in JS
 
+### Installation
+
+```
+npm install @takinabradley/bem-names
+```
+
 ### Usage:
 
 #### Create BEM object with BEM.b as desired block name
 
 ```js
-import createBEM
+import createBEM from "@takinabradley/bem-names"
 
 const BEM = createBEM("your-block")
 BEM.b // 'your-block'
@@ -62,7 +68,7 @@ modifyNavItem("mod1 mod2")
 {
   "import createBEM": {
     "prefix": "icb",
-    "body": "import createBEM"
+    "body": "import createBEM from '@takinabradley/bem-names'"
   },
   "createBEM": {
     "prefix": "bc",
